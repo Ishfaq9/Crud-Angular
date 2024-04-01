@@ -1,0 +1,32 @@
+<p>student-form works!</p>
+
+<!-- student-list.component.html -->
+
+<form >
+  <mat-form-field class="w-full">
+    <input type="text" formControlName="name" placeholder="Name">
+    <div *ngIf="studentForm.get('name').errors && studentForm.get('name').errors.required">Name is required</div>
+  </mat-form-field>
+  <mat-form-field class="w-full">
+    <input type="number" formControlName="age" placeholder="Age">
+    <div *ngIf="studentForm.get('age').errors && studentForm.get('age').errors.required">Age is required</div>
+  </mat-form-field>
+  <mat-form-field class="w-full">
+    <input type="email" formControlName="email" placeholder="Email">
+    <div *ngIf="studentForm.get('email').errors && studentForm.get('email').errors.required">Email is required</div>
+    <div *ngIf="studentForm.get('email').errors && studentForm.get('email').errors.email">Invalid email format</div>
+  </mat-form-field>
+
+  <mat-form-field class="w-full">
+    <input type="text" formControlName="department" placeholder="Department">
+    <div *ngIf="studentForm.get('department').errors && studentForm.get('department').errors.required">Department is
+      required</div>
+  </mat-form-field>
+
+  <mat-form-field class="w-full">
+    <input type="text" formControlName="status" placeholder="Status">
+    <div *ngIf="studentForm.get('status').errors && studentForm.get('status').errors.required">Status is required</div>
+  </mat-form-field>
+
+  <button type="submit">Create Student</button>
+</form>
