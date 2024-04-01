@@ -1,0 +1,73 @@
+/* Styles for laptop devices */
+@media screen and (min-width: 992px) and (max-width: 1199px) {
+  .container-fluid {
+    /* background-color: #e0e0e0; */
+  }
+
+  header {
+    padding: 1px 8px;
+  }
+  .main-content {
+    /* overflow: scroll !important; */
+  }
+
+  .logo {
+    width: 195px;
+    height: 64px;
+  }
+
+  .sidebar-menu {
+    padding-left: 0.7rem;
+  }
+
+  .sidebar-menu li a {
+    font-size: 12px;
+  }
+
+  .sidebar-menu li a img {
+    width: 20px;
+    height: 20px;
+    margin-right: 0.3rem;
+  }
+
+  #help-toggleButton {
+    padding: 1px 7px;
+    font-size: 20px;
+  }
+
+  .offers {
+    /* margin-top: 6rem; */
+    padding: 0rem 0rem;
+    /* margin-bottom: 7rem; */
+  }
+
+  .offer {
+    /* width: 240px; */
+    /* height: auto; */
+  }
+
+  .copy-icon {
+    /* font-size: 13px; */
+    padding-left: 1.5em;
+    background-position: left 0.1em top 50%, 0 0;
+  }
+
+  .content-validation {
+    /* width: 85%; */
+    /* margin: 28px auto; */
+    /* padding: 2rem; */
+    height: auto;
+  }
+
+  .content-validation .mb-4 {
+    margin-bottom: 0.5rem !important;
+  }
+
+  textarea.form-control {
+  }
+
+  .step img.step-icon {
+    height: 15px;
+    width: 15px;
+  }
+}

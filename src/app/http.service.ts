@@ -1,12 +1,16 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable, inject } from '@angular/core';
 import { IEmployee } from './Interfaces/employee';
+import { SMSRecipientCategory } from './Interfaces/SMSRecipientCategory';
+import { Observable } from 'rxjs/internal/Observable';
+import { SMSRecipient } from './Interfaces/SMSRecipient';
 
 @Injectable({
   providedIn: 'root'
 })
 export class HttpService {
 apiurl="https://localhost:44379";
+newUrl = "https://localhost:44311";
   http= inject(HttpClient);
   constructor() { }
   getAllEmployee(){
@@ -28,5 +32,9 @@ apiurl="https://localhost:44379";
 
   deleteEmployee(employeeId:number){
     return this.http.delete<IEmployee>(this.apiurl+"/api/Brand/Delete/"+employeeId);
+  }
+
+  CreateRecipientCategory(dataToSend: { smsRecipientCategory: SMSRecipientCategory, smsRecipient: SMSRecipient }): Observable<any>{
+   return this.http.post(this.newUrl +"/api/SMSRecipientCategory/CreateRecipientCategory",dataToSend);
   }
 }
