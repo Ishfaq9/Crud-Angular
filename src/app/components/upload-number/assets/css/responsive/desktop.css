@@ -1,0 +1,12 @@
+/* Styles for desktop devices */
+@media screen and (min-width: 1200px) {
+  .container-fluid {
+    /* background-color: #da9898; */
+  }
+
+  .offers {
+    /* margin-top: 6rem; */
+    padding: 0rem 0rem;
+    /* margin-bottom: 7rem; */
+  }
+}

@@ -1,0 +1,181 @@
+/* Styles for mobile devices */
+@media screen and (max-width: 767px) {
+    .container-fluid {
+      /* background-color: #c0c0c0; */
+    }
+
+    header{
+      padding: 20px 5px;
+    }
+    .main-content{
+      margin: 0rem;
+      width: 100%;
+      padding: 1rem;
+      overflow: scroll !important;
+      background: none; 
+      box-shadow: none;
+    }
+
+ tr {
+  height: auto;
+ }
+
+    .dashboard-title a{
+      font-size: 20px;
+    }
+
+    .dashboard-title a img{
+      width: 20px;
+      height: 20px;
+    }
+    .dropdown a img{
+      width: 15px;
+    height: 15px;
+    margin: 2px;
+    }
+
+    .step img.step-icon {
+      height: 7px;
+      width: 7px;
+    }
+
+    .sidebar{
+      display: none;
+    }
+
+    .sidebar-mobile{
+      position: absolute;
+      width: 200px;
+      display: block;
+      margin-top: 4.3rem;
+    }
+
+    .content {
+      width: 100%;
+  }
+  .icons{
+    width: 20px;
+    height: 20px;
+    margin: 0px 3px;
+  }
+
+  #help-toggleButton{
+    padding: 2px 4px;
+    font-size: 15px;
+    top: 76px;
+  }
+
+
+.generate-btn-mobile{
+  margin-top: -36px;
+}
+.copy-icon{
+  margin-top: 1rem;
+}
+
+    
+.form-group{
+  margin-bottom: 1rem;
+}
+
+
+p{
+  margin-bottom: .2rem;
+}
+
+
+.expended{
+  display: none;
+}
+
+
+
+
+.main-content table{
+  width: 770px;
+  overflow-x: scroll;
+}
+
+
+.dynamic-circle-border{
+  width: 50px;
+  height: 50px;
+}
+
+.gradient-list{
+  margin-left: auto;
+}
+
+.dynamic-circle-border::after{
+  border: 0.4rem solid;
+  border-image-slice: 1;
+  border-image-source: conic-gradient(#1a3a54 0%, #F37067 calc(var(--percentage)* 1%), #8AD4DF calc(var(--percentage)* 1%), #3c96d2 100%);
+}
+
+
+.buy dl li .circle-buy {
+  width: 40px;
+  height: 40px;
+  align-items: center;
+}
+.buy dl li .circle-buy p{
+  font-size: 13px;
+}
+/* .dynamic-circle p{
+font-size: 14px;
+} */
+
+.sms-package-intro{
+  margin-top: 2rem;
+  font-size: 13px;
+  font-weight: 500;
+  line-height: .7;
+  padding-bottom: 1rem;
+}
+.main-content-buy{
+  margin: 0rem;
+}
+.buy-pay{
+  margin-top: 1rem;
+  margin-right: 0rem;
+  padding: 1rem;
+  padding-bottom: 2rem;
+}
+
+.sms-pkg-slogan{
+  margin-bottom: 2rem;
+display: block;
+}
+
+
+
+
+
+
+
+
+}
+
+
+@media screen and (max-width: 490px) {
+  .header-menu{
+    margin-right: 0rem;
+  }
+  nav ul li a{
+    padding: 0px;
+  }
+  
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
