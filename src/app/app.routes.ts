@@ -3,11 +3,12 @@ import { EmployeeListComponent } from './components/employee-list/employee-list.
 import { EmployeeFormComponent } from './components/employee-form/employee-form.component';
 import { EmployeeMasterComponent } from './components/employee-master/employee-master.component';
 import { StudentFormComponent } from './components/student-form/student-form.component';
+import { UploadNumberComponent } from './components/upload-number/upload-number.component';
 
 export const routes: Routes = [
     {
         path:"",
-        component:EmployeeListComponent
+        component:UploadNumberComponent
     },
     {
         path:"employee-list",

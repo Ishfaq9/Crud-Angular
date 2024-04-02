@@ -1,0 +1,31 @@
+<p>upload-number works!</p>
+
+<mat-card-content>
+    <br><br>
+    <mat-form-field style="width: 50%;">
+        <mat-label>File</mat-label>
+        <button mat-icon-button matPrefix (click)="f_input.click()">
+            <mat-icon>attach_file</mat-icon>
+        </button>
+        <input type="text" matInput [formControl]="display" readonly="true" required="true" />
+        <input type="file" multiple hidden #f_input (change)="handleFileInputChange(f_input.files)" required />
+    </mat-form-field>
+    <br><br>
+</mat-card-content>
+
+<form #smsForm="ngForm" (ngSubmit)="onSubmit()">
+    <div class="form-group">
+        <mat-form-field appearance="fill" style="width: 50%;">
+            <mat-label>List Name</mat-label>
+            <input matInput name="name" [(ngModel)]="smsRecipientCategory.Name" required>
+        </mat-form-field>
+    </div>
+    <div class="form-group">
+        <mat-form-field appearance="fill" style="width: 50%;">
+            <mat-label>Remarks</mat-label>
+            <input matInput name="description" [(ngModel)]="smsRecipientCategory.Description">
+        </mat-form-field>
+    </div>
+
+    <button mat-raised-button color="primary" type="submit">Upload File</button>
+</form>

@@ -39,7 +39,10 @@ novocomApi ="https://localhost:44374";
    return this.http.post(this.newUrl +"/api/SMSRecipientCategory/CreateRecipientCategory",dataToSend);
   } */
 
-  CreateRecipientCategory(dataToSend: SMSRecipientCategory): Observable<any>{
+  /* CreateRecipientCategory(dataToSend: SMSRecipientCategory): Observable<any>{
     return this.http.post(this.novocomApi +"/api/SMSRecipientCategory/CreateRecipientCategory",dataToSend);
+   } */
+   CreateRecipientCategory(dataToSend: SMSRecipientCategory): Observable<any>{
+    return this.http.post(this.newUrl +"/api/SMSRecipientCategory/CreateRecipientCategory",dataToSend);
    }
 }
