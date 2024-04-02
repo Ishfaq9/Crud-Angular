@@ -11,6 +11,7 @@ import { SMSRecipient } from './Interfaces/SMSRecipient';
 export class HttpService {
 apiurl="https://localhost:44379";
 newUrl = "https://localhost:44311";
+novocomApi ="https://localhost:44374";
   http= inject(HttpClient);
   constructor() { }
   getAllEmployee(){
@@ -34,7 +35,11 @@ newUrl = "https://localhost:44311";
     return this.http.delete<IEmployee>(this.apiurl+"/api/Brand/Delete/"+employeeId);
   }
 
-  CreateRecipientCategory(dataToSend: { smsRecipientCategory: SMSRecipientCategory, smsRecipient: SMSRecipient }): Observable<any>{
+ /*  CreateRecipientCategory(dataToSend: { smsRecipientCategory: SMSRecipientCategory, smsRecipient: SMSRecipient }): Observable<any>{
    return this.http.post(this.newUrl +"/api/SMSRecipientCategory/CreateRecipientCategory",dataToSend);
-  }
+  } */
+
+  CreateRecipientCategory(dataToSend: SMSRecipientCategory): Observable<any>{
+    return this.http.post(this.novocomApi +"/api/SMSRecipientCategory/CreateRecipientCategory",dataToSend);
+   }
 }

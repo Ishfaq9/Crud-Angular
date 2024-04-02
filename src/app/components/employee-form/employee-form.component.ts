@@ -24,11 +24,21 @@ router =inject(Router);
 route=inject(ActivatedRoute);
 display = new FormControl();
 
-smsRecipientCategory: SMSRecipientCategory = { Id: 0, Name: 'ishfaq', Description: 'ok', IsActive: true, InsertedBy: '', InsertedDateTime: new Date() };
+smsRecipientCategory: SMSRecipientCategory = {
+  Id: 0, Name: '', Description: '', IsActive: true, InsertedBy: '', InsertedDateTime: new Date(),
+  SmsRecipients: [] // Initialize SmsRecipients array
+};
+
+smsRecipient: SMSRecipient = {
+  Id: 0, PhoneNumber: '', IsActive: true, SmsRecipientCategoryId: this.smsRecipientCategory.Id,
+  InsertedBy: '', InsertedDateTime: new Date()
+};
+
+/* smsRecipientCategory: SMSRecipientCategory = { Id: 0, Name: '', Description: '', IsActive: true, InsertedBy: '', InsertedDateTime: new Date() };
 smsRecipient: SMSRecipient = {
   Id: 0, PhoneNumber: '', IsActive: true, SmsRecipientCategoryId: 0, InsertedBy: '', InsertedDateTime: new Date(),
   SMSRecipients: []
-};
+}; */
 selectedFile!: File;
 mobileNumbers: string[] = [];
 
@@ -68,33 +78,47 @@ onSubmit(): void {
     console.error('The Name field is required.');
     return; // Prevent form submission
   }
-
+  
   // Assign the mobileNumbers to the smsRecipient object
-  this.smsRecipient.SmsRecipientCategoryId = this.smsRecipientCategory.Id;
-  this.smsRecipient.SmsRecipientCategory = this.smsRecipientCategory;
-  this.smsRecipient.SMSRecipients = this.mobileNumbers.map(number => ({
+  //this.smsRecipient.SmsRecipientCategoryId = this.smsRecipientCategory.Id;
+  //this.smsRecipient.SmsRecipientCategory = this.smsRecipientCategory;
+  //this.smsRecipient=this.mobile
+/*   this.smsRecipient.SMSRecipients= this.mobileNumbers.map(number => ({
     Id: 0, // Initialize with appropriate values
     PhoneNumber: number,
     IsActive: true,
     SmsRecipientCategoryId: this.smsRecipientCategory.Id,
     InsertedBy: '',
     InsertedDateTime: new Date()
-  }));
+  })); */
+  this.smsRecipientCategory.SmsRecipients = this.mobileNumbers.map(number => ({
+    Id: 0,
+    PhoneNumber: number,
+    IsActive: true,
+    SmsRecipientCategoryId: this.smsRecipientCategory.Id,
+    InsertedBy: '',
+    InsertedDateTime: new Date()
+}));
+
   const dataToSend = {
     smsRecipientCategory: this.smsRecipientCategory,
     smsRecipient: this.smsRecipient
   };
-  // Call the service method to create recipient category
-  this.httpService.CreateRecipientCategory(dataToSend)
+
+
+
+  this.httpService.CreateRecipientCategory(this.smsRecipientCategory)
     .subscribe(response => {
       console.log('Response from backend:', response);
-      // Handle success or failure based on the response
+      alert("Members Improted Successfully");
+      this.router.navigateByUrl("/create-employee");
+   
     }, error => {
       console.error('Error from backend:', error);
-      // Handle error
+  
       if (error instanceof HttpErrorResponse && error.error && error.error.errors) {
         console.log('Validation errors:', error.error.errors);
-        // Display or handle validation errors here
+        
       }
     });
   
